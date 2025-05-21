@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(Desafio2 main.cpp
-    stayhome.h stayhome.cpp)
+    UdeaStay.h UdeaStay.cpp
+
+)
 
 include(GNUInstallDirs)
 install(TARGETS Desafio2
