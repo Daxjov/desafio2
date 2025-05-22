@@ -60,7 +60,7 @@ public:
     //metodos
     string getterDoc();
     void setterDoc( string doc);
-    bool login(string doc,string pass);
+
 
 };
 
@@ -82,13 +82,11 @@ class Login
 {
     string bienvenidad;
 
-
-
 public:
     Login() {}
     string getterWel();
-    void getterMenu();
     bool verificate(string user,string pass);
-   };
+
+};
 
 #endif // UDEASTAY_H

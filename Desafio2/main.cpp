@@ -5,13 +5,9 @@ using namespace std;
 
 int main()
 {
-
     Login welcome;
     cout<<welcome.getterWel();
-    Login menu;
-    menu.getterMenu();
-
-    /*int opcion = 1;
+    int opcion = 1;
     while(opcion!=0){
     cout<<"1.Anfitrion"<<endl;
     cout<<"2.Huesped"<<endl;
@@ -23,15 +19,32 @@ int main()
         string passwd;
         cout<<"ingrese Usuario:"<<endl;
         cin>>user;
+        cout<<endl;
+        cout<<"Ingrese Contraseña:"<<endl;
+        cin>>passwd;
+        cout<<endl;
+        Login acceso;
+        bool confirm=acceso.verificate(user,passwd);
+        if(confirm==true){
+            cout<<"Bienvenido Anfitrion";
+        }
+
+        break;
+    }
+    case 2:{
+        string user;
+        string passwd;
+        cout<<"ingrese Usuario:"<<endl;
+        cin>>user;
         cout<<"Ingrese Contraseña:"<<endl;
         cin>>passwd;
         break;
+
     }
     default:
         break;
     }
 
     }
-*/
     return 0;
 }

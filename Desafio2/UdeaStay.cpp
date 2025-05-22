@@ -14,44 +14,24 @@ bool Login::verificate(string user,string pass){
     if(!archivo.is_open()){
         cerr<<"Error: no se abrio el archivo\n";
     }
-    while(archivo.get(c)){
-        if(c==',')break;
-        copiaU+=c;
+    else{
+        cout<<"Archivo Abierto correctamente"<<endl;
     }
-    if(copiaU==user)
-        return true;
-    else
-        return false;
-
-}
-
-void Login::getterMenu(){
-    int opcion = 1;
-    while(opcion!=0){
-        cout<<"1.Anfitrion"<<endl;
-        cout<<"2.Huesped"<<endl;
-        cout<<"0.Salir"<<endl;
-        cin>>opcion;
-        switch (opcion) {
-        case 1:{
-            string user;
-            string passwd;
-            cout<<"ingrese Usuario:"<<endl;
-            cin>>user;
-            cout<<"Ingrese Contraseña:"<<endl;
-            cin>>passwd;
-            verificate(user,passwd);
+    while(archivo.get(c)){
+        if(c==',')
             break;
-            }
+        copiaU+=c;
 
+    }
+    while(archivo.get(c)){
+        if(c==','||c=='\n')continue;
+        copiaP+=c;
+    }
+    archivo.close();
 
-        default:
-            break;
-        }
-        }
+    return (copiaU==user && copiaP==pass);
 
-
-}
+    }
 
 
 /*string Login::readAnf(const string &archivo){
