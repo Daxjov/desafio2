@@ -1,8 +1,9 @@
-#ifndef RESERVACION_H
-#define RESERVACION_H
+#ifndef UDEASTAY_H
+#define UDEASTAY_H
+
 #include <iostream>
 #include <string>
-
+#include <fstream>
 using namespace std;
 
 class Reservacion
@@ -20,16 +21,10 @@ public:
 
     Reservacion() {}
     Reservacion(string fechaPago);
+
 };
 
-#endif//RESERVACION_H
 
-
-#ifndef ALOJAMIENTO_H
-#define ALOJAMIENTO_H
-#include<iostream>
-#include <string>
-using namespace std;
 
 
 class Alojamiento
@@ -42,53 +37,58 @@ class Alojamiento
     double precio;
     string amenidades;
     string archivo;
-    Reservacion fechasReservas(string fechaPago);
+    string fechaPago;
 public:
 
     Alojamiento() {}
     Alojamiento(string archivo);
 };
 
-#endif//ALOJAMIENTO_H
 
-#ifndef UDEASTAY_H
-#define UDEASTAY_H
-#include <iostream>
-#include <string>
-
-using namespace std;
 class Anfitrion
 {
 private:
     string documento;
     int antiguedad;
     double puntuacion;
-    Alojamiento leerPropiedades (string archivo);
+    string alojamientos;
     string password;
+    string usuario;
 public:
 
     Anfitrion();
+    //metodos
+    string getterDoc();
+    void setterDoc( string doc);
     bool login(string doc,string pass);
 
 };
 
-#endif // UDEASTAY_H
 
-
-
-
-#ifndef HUESPEDES_H
-#define HUESPEDES_H
-#include <iostream>
-#include <string>
-
-class Huespedes
+//Clase Huesped
+class Huesped
 {
     string documento;
     int antiguedad;
     double puntuacion;
-    Reservacion infoReserva(string archivo);
+    string reservas;
+    string password;
 public:
-    Huespedes() {}
+    Huesped() {}
 };
-#endif
+
+//Clase Login
+class Login
+{
+    string bienvenidad;
+
+
+
+public:
+    Login() {}
+    string getterWel();
+    void getterMenu();
+    bool verificate(string user,string pass);
+   };
+
+#endif // UDEASTAY_H
