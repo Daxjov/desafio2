@@ -7,9 +7,14 @@ string Login::getterWel(){
 }
 
 bool Login::verificate(string user,string pass){
-    string copiaU;
-    string copiaP;
+
+    string copia;
     char c;
+    bool validaU;
+    bool validaP;
+    int longitud;
+    int longitudP=pass.length();
+    int longitudU=user.length();
     ifstream archivo("Archivos/loginAnfitrion.txt");
     if(!archivo.is_open()){
         cerr<<"Error: no se abrio el archivo\n";
@@ -17,19 +22,25 @@ bool Login::verificate(string user,string pass){
     else{
         cout<<"Archivo Abierto correctamente"<<endl;
     }
-    while(archivo.get(c)){
-        if(c==',')
-            break;
-        copiaU+=c;
 
-    }
     while(archivo.get(c)){
-        if(c==','||c=='\n')continue;
-        copiaP+=c;
+        copia+=c;
     }
+    longitud=copia.length();
+    for (int u = 0; u < longitud; u+=longitudU) {
+        for (int t = 0; t < longitud; ++t)
+        {
+            if(copia[u+t]==',')
+                break;
+            else if(copia[u+t]==user[u+t]){
+                validaU=true;
+            }
+
+        }
+    }
+
     archivo.close();
 
-    return (copiaU==user && copiaP==pass);
 
     }
 
