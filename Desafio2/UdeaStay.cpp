@@ -7,59 +7,44 @@ string Login::getterWel(){
 }
 
 bool Login::verificate(string user,string pass){
-
-    string copia;
+    int n=10;
+    string copia[n];
     char c;
-    bool validaU;
-    bool validaP;
-    int longitud;
-    int longitudP=pass.length();
-    int longitudU=user.length();
+    bool valida;
+    int cont=0;
     ifstream archivo("Archivos/loginAnfitrion.txt");
     if(!archivo.is_open()){
         cerr<<"Error: no se abrio el archivo\n";
     }
-    else{
+    else
         cout<<"Archivo Abierto correctamente"<<endl;
-    }
-
-    while(archivo.get(c)){
-        copia+=c;
-    }
-    longitud=copia.length();
-    for (int u = 0; u < longitud; u+=longitudU) {
-        for (int t = 0; t < longitud; ++t)
-        {
-            if(copia[u+t]==',')
+    for (int i = 0; i < n; ++i) {
+        while (archivo.get(c)) {
+            if(c==','||c=='\n'){
                 break;
-            else if(copia[u+t]==user[u+t]){
-                validaU=true;
-            }
+                }
+            copia[i]+=c;
+        }
+        cont++;
+        if (copia[i]=="")
+            break;
+    }
 
+    copia[cont-1]='\0';
+    for (int e = 0; e<n; e+=2) {
+        if(copia[e]==user&&copia[e+1]==pass){
+            valida=true;
+            break;
         }
     }
 
+
+
     archivo.close();
 
-
+    return valida;
     }
 
-
-/*string Login::readAnf(const string &archivo){
-    ifstream archivo;
-    if(!archivo.is_open()){
-        cerr<<"Error: archivo "<<archivo<<" no fue abierto"<<endl;
-    }
-    char c;
-    string user;
-    while(archivo.get(c)){
-        if (c == ',')break;
-        user += c;
-    }
-    archivo.close();
-    return user;
-    }
-*/
 //Metodos Clase Anfitriones
 
 

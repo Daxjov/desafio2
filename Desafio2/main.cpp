@@ -26,7 +26,7 @@ int main()
         Login acceso;
         bool confirm=acceso.verificate(user,passwd);
         if(confirm){
-            cout<<"Bienvenido Anfitrion";
+            cout<<"Bienvenido Anfitrion\n";
         }
         else
             cout<<"Credenciales incorrectas"<<endl;
