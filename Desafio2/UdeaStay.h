@@ -81,11 +81,10 @@ public:
 class Login
 {
     string bienvenidad;
-
 public:
     Login() {}
     string getterWel();
-    bool verificate(string user,string pass);
+    bool verificate(string user,string pass,string nombrearchivo);
 
 };
 

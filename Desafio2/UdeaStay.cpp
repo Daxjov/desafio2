@@ -6,13 +6,13 @@ string Login::getterWel(){
     return bienvenidad;
 }
 
-bool Login::verificate(string user,string pass){
+bool Login::verificate(string user,string pass, string nombrearchivo){
     int n=10;
     string copia[n];
     char c;
     bool valida;
     int cont=0;
-    ifstream archivo("Archivos/loginAnfitrion.txt");
+    ifstream archivo(nombrearchivo);
     if(!archivo.is_open()){
         cerr<<"Error: no se abrio el archivo\n";
     }

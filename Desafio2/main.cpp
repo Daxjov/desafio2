@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+
     Login welcome;
     cout<<welcome.getterWel();
     int opcion = 1;
@@ -24,7 +25,7 @@ int main()
         cin>>passwd;
         cout<<endl;
         Login acceso;
-        bool confirm=acceso.verificate(user,passwd);
+        bool confirm=acceso.verificate(user,passwd,"Archivos/loginAnfitrion.txt");
         if(confirm){
             cout<<"Bienvenido Anfitrion\n";
         }
@@ -40,6 +41,14 @@ int main()
         cin>>user;
         cout<<"Ingrese Contraseña:"<<endl;
         cin>>passwd;
+        cout<<endl;
+        Login acceso;
+        bool confirm=acceso.verificate(user,passwd,"Archivos/loginHuesped.txt");
+        if(confirm){
+            cout<<"Bienvenido Huesped\n";
+        }
+        else
+            cout<<"credenciales incorrectas\n";
         break;
 
     }
