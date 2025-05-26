@@ -68,6 +68,7 @@ public:
 //Clase Huesped
 class Huesped
 {
+    string usuario;
     string documento;
     int antiguedad;
     double puntuacion;

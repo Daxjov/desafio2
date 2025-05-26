@@ -117,16 +117,17 @@ int main()
                 con++;
                 cout<<"Ingrese Fecha de reserva:\n";
                 con++;
-                cin<<fechaR;
+                cin>>fechaR;
                 con++;
                 cout<<"Ingrese Municipio:\n";
                 con++;
-                cin<<municipio;
+                cin>>municipio;
                 con++;
                 cout<<"Ingrese cantidad de noches:\n";
                 con++;
                 cin>>noches;
                 con++;
+
             break;
             }
             default:
@@ -136,7 +137,7 @@ int main()
            }
         else{
             cout<<"credenciales incorrectas\n\n";
-            cont++;
+            con++;
             cout<<"Iteraciones Login Huesped: "<<con++<<endl<<endl;
 
         }

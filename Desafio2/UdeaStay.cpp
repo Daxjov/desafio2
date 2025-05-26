@@ -61,8 +61,12 @@ bool Login::verificate(string user,string pass, string nombrearchivo){
     return valida;
     }
 
-//Metodos Clase Anfitriones
+    //Metodos Clase Huesped
 
+
+
+
+    //Metodos Clase Anfitriones
 
 Anfitrion::Anfitrion(){}
 
