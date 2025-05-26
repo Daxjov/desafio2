@@ -80,15 +80,64 @@ int main()
            Login acceso;
            con++;
            bool confirm=acceso.verificate(user,passwd,"Archivos/loginHuesped.txt");
+
            cout<<"Objeto Login acceso: "<<sizeof(acceso)<<" Bytes"<<endl;
+
+           cout<<"Iteraciones Login Huesped: "<<con++<<endl<<endl;
+
            if(confirm){
+            int opcion1=1;
+            con=0;
             con++;
-           cout<<"Bienvenido Huesped\n\n";
-        cout<<"Iteraciones Login Huesped: "<<con++<<endl<<endl;
-        }
+            while(opcion1!=0){
+                con++;
+            cout<<"Bienvenido Huesped\n\n";
+            con++;
+            cout<<"1.Reservar Alojamiento"<<endl;
+            con++;
+            cout<<"2.Anular Reservacion"<<endl;
+            con++;
+            cout<<"0.Salir"<<endl;
+            con++;
+            cin>>opcion1;
+            con++;
+            cout<<"Iteraciones Menu Huesped: "<<con++<<endl;
+            switch (opcion1) {
+                con=0;
+                con++;
+            case 1:{
+                con++;
+                string fechaR;
+                con++;
+                string municipio;
+                con++;
+                string noches;
+                con++;
+                cout<<"Formato Fecha Ej: lunes,3,agosto,2025"<<endl;
+                con++;
+                cout<<"Ingrese Fecha de reserva:\n";
+                con++;
+                cin<<fechaR;
+                con++;
+                cout<<"Ingrese Municipio:\n";
+                con++;
+                cin<<municipio;
+                con++;
+                cout<<"Ingrese cantidad de noches:\n";
+                con++;
+                cin>>noches;
+                con++;
+            break;
+            }
+            default:
+                break;
+            }
+               }
+           }
         else{
             cout<<"credenciales incorrectas\n\n";
-            cout<<"Iteraciones Login Huesped: "<<con<<endl<<endl;
+            cont++;
+            cout<<"Iteraciones Login Huesped: "<<con++<<endl<<endl;
 
         }
         break;
