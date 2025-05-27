@@ -46,16 +46,16 @@ int main()
         con++;
         Login acceso;
         bool confirm=acceso.verificate(user,passwd,"Archivos/loginAnfitrion.txt");
-        cout<<"Objeto Login Acceso: "<<sizeof(acceso)<<" Bytes"<<endl;
+        cout<<"Objeto Login Acceso: "<<sizeof(acceso)<<" Bytes"<<endl<<endl;
         if(confirm){
             con++;
             cout<<"Iteracciones login externas: "<<con++<<endl;
             cout<<"Bienvenido Anfitrion\n";
         }
         else{
-            cout<<"Credenciales incorrectas"<<endl;
-       con++;
        cout<<"Iteracciones login externas: "<<con++<<endl;
+            con++;
+        cout<<"Credenciales incorrectas"<<endl;
         }
 
         break;

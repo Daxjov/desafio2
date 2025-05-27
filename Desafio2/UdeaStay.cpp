@@ -15,7 +15,7 @@ bool Login::verificate(string user,string pass, string nombrearchivo){
     con++;
     char c;
     con++;
-    bool valida;
+    bool valida=false;
     con++;
     int cont=0;
     con++;
@@ -37,9 +37,10 @@ bool Login::verificate(string user,string pass, string nombrearchivo){
         }
         cont++;
         con++;
-        if (copia[i]=="")
+        if (copia[i]==""){
             con++;
             break;
+        }
     }
 
     copia[cont-1]='\0';
