@@ -6,10 +6,11 @@
 #include <fstream>
 using namespace std;
 
-class Reservacion
+class Reserva
 {
     string fechaEntrada;
-    int duracion;
+    string municipio;
+    int cantNoches;
     string codigoReserva;
     string codigoID;
     string documentoHuesped;
@@ -17,10 +18,12 @@ class Reservacion
     string fechaPago;
     double monto;
     string nota;
+
 public:
 
-    Reservacion() {}
-    Reservacion(string fechaPago);
+    Reserva() {}
+    Reserva(string fechaPago);
+    void Reservas(string fechaEntrada,string municipio,int cantNoches);
 
 };
 

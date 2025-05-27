@@ -62,6 +62,25 @@ bool Login::verificate(string user,string pass, string nombrearchivo){
     return valida;
     }
 
+//Metodos Reserva
+
+    void Reserva::Reservas(string fechaEntrada,string municipio,int cantNoches){
+        int con=0;
+        ofstream archivo("Archivos/reservas.txt");
+        if(!archivo.is_open()){
+            con++;
+            cerr<<"Error: no es posible crear o escribir en el archivo\n";
+            con++;
+        }
+        else{
+            cout<<"Archivo creado listo para escribir\n";
+        }
+
+    }
+
+
+
+
     //Metodos Clase Huesped
 
 

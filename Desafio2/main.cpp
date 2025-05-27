@@ -111,7 +111,7 @@ int main()
                 con++;
                 string municipio;
                 con++;
-                string noches;
+                int noches;
                 con++;
                 cout<<"Formato Fecha Ej: lunes,3,agosto,2025"<<endl;
                 con++;
@@ -127,6 +127,9 @@ int main()
                 con++;
                 cin>>noches;
                 con++;
+                Reserva reserva1;
+                reserva1.Reservas(fechaR,municipio,noches);
+
 
             break;
             }
