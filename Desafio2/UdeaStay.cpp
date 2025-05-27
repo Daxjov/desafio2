@@ -66,6 +66,8 @@ bool Login::verificate(string user,string pass, string nombrearchivo){
 
     void Reserva::Reservas(string fechaEntrada,string municipio,int cantNoches){
         int con=0;
+        string copia;
+        char c;
         ofstream archivo("Archivos/reservas.txt");
         if(!archivo.is_open()){
             con++;
@@ -76,8 +78,25 @@ bool Login::verificate(string user,string pass, string nombrearchivo){
             cout<<"Archivo creado listo para escribir\n";
         }
 
-    }
+        archivo<<fechaEntrada<<','<<municipio<<','<<cantNoches<<'\n';
 
+        archivo.close();
+
+    }
+    void Reserva::verReservas(){
+        string reservas[50];
+        char c;
+        ifstream archivo("Archivos/reservas.txt");
+        for (int e = 0; e < 50; ++e) {
+            while(archivo.get(c)){
+                reservas[e]+=c;
+            }
+        }
+        for (int i = 0; i < 50; ++i) {
+            cout<<reservas[i];
+        }
+
+        }
 
 
 

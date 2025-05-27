@@ -129,6 +129,7 @@ int main()
                 con++;
                 Reserva reserva1;
                 reserva1.Reservas(fechaR,municipio,noches);
+                reserva1.verReservas();
 
 
             break;

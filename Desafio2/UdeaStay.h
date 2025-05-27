@@ -24,6 +24,7 @@ public:
     Reserva() {}
     Reserva(string fechaPago);
     void Reservas(string fechaEntrada,string municipio,int cantNoches);
+    void verReservas();
 
 };
 
