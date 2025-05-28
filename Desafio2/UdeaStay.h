@@ -1,96 +1,77 @@
+// ================= UdeaStay.h =================
 #ifndef UDEASTAY_H
 #define UDEASTAY_H
 
 #include <iostream>
-#include <string>
 #include <fstream>
 using namespace std;
 
-class Reserva
-{
+class Reserva {
     string fechaEntrada;
     string municipio;
     int cantNoches;
     string codigoReserva;
-    string codigoID;
+    string codigoAlojamiento;
     string documentoHuesped;
     string metodoPago;
     string fechaPago;
     double monto;
     string nota;
-
 public:
-
     Reserva() {}
-    Reserva(string fechaPago);
-    void Reservas(string fechaEntrada,string municipio,int cantNoches);
-    void verReservas();
-
+    Reserva(string fEntrada, string muni, int noches, string codRes, string codAloja, string docH, string mPago, string fPago, double m, string n);
+    void guardarReserva();
+    string getCodigoReserva();
+    string getCodigoAlojamiento();
+    string getFechaEntrada();
+    int getDuracion();
 };
 
-
-
-
-class Alojamiento
-{
+class Alojamiento {
     string nombre;
     string codigoID;
-    string departamento;
+    string anfitrion;
     string municipio;
+    string tipo;
     string direccion;
     double precio;
     string amenidades;
-    string archivo;
-    string fechaPago;
 public:
-
     Alojamiento() {}
-    void listaAlojamientos();
+    void mostrarAlojamientos();
 };
 
-
-class Anfitrion
-{
-private:
+class Anfitrion {
     string documento;
     int antiguedad;
     double puntuacion;
-    string alojamientos;
     string password;
     string usuario;
 public:
-
-    Anfitrion();
-    //metodos
-    string getterDoc();
-    void setterDoc( string doc);
-
-
+    Anfitrion() {}
+    bool cancelarReserva(string codReserva);
+    void consultarReservasActivas(string desde, string hasta);
 };
 
-
-//Clase Huesped
-class Huesped
-{
+class Huesped {
     string usuario;
     string documento;
     int antiguedad;
     double puntuacion;
-    string reservas;
     string password;
 public:
     Huesped() {}
+    void hacerReserva();
 };
 
-//Clase Login
-class Login
-{
+class Login {
     string bienvenidad;
 public:
     Login() {}
     string getterWel();
-    bool verificate(string user,string pass,string nombrearchivo);
-
+    bool verificate(string user, string pass, string nombrearchivo);
 };
 
-#endif // UDEASTAY_H
+void actualizarHistorico(string hoy);
+
+#endif

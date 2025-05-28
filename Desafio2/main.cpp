@@ -129,9 +129,21 @@ int main()
                 con++;
                 Reserva reserva1;
                 reserva1.Reservas(fechaR,municipio,noches);
+                cout<<"Reserva"
                 reserva1.verReservas();
                 Alojamiento lista;
                 lista.listaAlojamientos();
+                int opc;
+                cout<<"Ingrese codigo de alojamiento\n";
+                cin>>opc;
+                switch (opc) {
+                case 1:
+                    cout<<"Alojamiento Reservado\n";
+
+                    break;
+                default:
+                    break;
+                }
 
             break;
             }
