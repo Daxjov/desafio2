@@ -1,0 +1,50 @@
+Informe
+El desarrollo del problema consistio en
+1) crear un login que:
+Verifique las credenciales desde dos archivos uno para anfitrion y otro para
+hueped, el cual diferencia entre huesped y anfitrion y desplega el menu 
+correspondiente segun el tipo de usuario.
+2)Creacion de Reserva
+la cual crea una reserva con informacion del huesped,alojamiento y duracion,
+genere automaticamente un codigo de reserva,almacene la informacion en
+archivos,permita cancelaciones por los anfitriones y los huespedes y 
+guarde un historico de las reservas.
+3)Creacion de Alojamiento:
+Muestra de los alojamientos disponibles desde archivo.
+con formato en el cual cada alojamiento tiene un nombre,codigo,anfitrion,
+direccion,tipo,precio y amenidades.
+4)Creacion de Huesped:
+donde se permite la creacion de Reservas,la cancelacion de Reservas, 
+la notificacion de reservas previas notificaicon de disponibilidad de
+alojamiento
+5)Creacion de Anfitrion:
+Donde se permite ver reservas asociadas a sus alojamientos,
+y puede cancelar reservas especificas,
+
+Problemas Afrontados
+
+los problemas afrontados fueron la implementacion del login en la lectura 
+de varias lineas en el archivo y la comparacion de los datos ingresados con 
+los almacenados al principio solo use ciclos que no halle la solucion
+cuando use arreglos para su almacenamiento encotre laforma de verificar
+ambos datos.
+
+Otro problema que afronte fue el uso de condtructores ya que al inicio use
+directamente metodos que me complicaron la logica del programa
+
+Evolucion de la Solucion
+La evolucion fue un poco atascada al principio ya que no hallaba la forma mas
+adecuada de implmentar el login apenas puede implementarlo ya la lectura y
+previamente trabajada me facilito el proceso en la lectura de artchivos y en su
+escritura la implementacion de las clases tuve dificultad en su implementacion
+atraves de constructores ya que al principio no los use si no que use 
+directamente metodos lo cual me complico la logica del programa al 
+implementar los constructores y el uso de punteros correctamente puede tener
+mayor eficiencia en el programa y una logica mas adecuada para la implementacion
+
+COnsideraciones a tener en cuenta
+
+las consideraciones a tener en cuenta es el uso de archivos para cada clase 
+aunque son mas archivos pude hacer implementaciones mas claras y efectivas
+el uso de la memoria dinamica y punteros para un programa mas eficiente y el 
+uso de ocnstructures para la implementacion de la logica mas clara. 

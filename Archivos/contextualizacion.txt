@@ -1,0 +1,14 @@
+Contextualizacion
+Estadia Hogareña, para rentar a visitantes foraneos un alojamiento que
+pertenece a un particular.EL objetivo es desarrollar un programa para la 
+administracion del mercado de estadias hogareñas,utilizando la programacion
+Orientada a objetos. 
+El sistema debe permitir:
+La verificación de usuarios (huéspedes y anfitriones).
+La consulta y gestión de alojamientos.
+La reserva de estadías.
+La visualización y cancelación de reservas.
+El mantenimiento de un histórico de reservas.
+
+Todo de manera eficiente, segura y sin redundancia innecesarias.
+

@@ -1,0 +1,3 @@
+Alojamiento1,01,david,Antioquia,Medellín,Apartamento,av 32 # 54-45,70000,Turco;Wifi;TV
+Alojamiento2,02,pedro,Antioquia,Marinilla,Casa,cll 23 # 44-65,85000,Parqueadero;Patio
+

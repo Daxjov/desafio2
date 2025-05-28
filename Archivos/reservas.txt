@@ -1,0 +1,5 @@
+R001,01,memo,lunes,03,julio,2026,7,PSE,01/06/2025,490000,Quiero habitación con ventana
+
+R002,02,andrea,miércoles,10,julio,2026,4,TCrédito,01/06/2025,340000,Necesito parqueadero
+
+lunes,25,julio,2025,medellin,7,R003,01,456987,pse,28/05/2025,450000,quiero ver el edificio coltejer
