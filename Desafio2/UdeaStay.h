@@ -45,7 +45,7 @@ class Alojamiento
 public:
 
     Alojamiento() {}
-    Alojamiento(string archivo);
+    void listaAlojamientos();
 };
 
 

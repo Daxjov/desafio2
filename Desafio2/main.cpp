@@ -130,7 +130,8 @@ int main()
                 Reserva reserva1;
                 reserva1.Reservas(fechaR,municipio,noches);
                 reserva1.verReservas();
-
+                Alojamiento lista;
+                lista.listaAlojamientos();
 
             break;
             }

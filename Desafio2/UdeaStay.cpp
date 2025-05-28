@@ -98,6 +98,26 @@ bool Login::verificate(string user,string pass, string nombrearchivo){
 
         }
 
+        //Metodos Alojamientos
+
+        void Alojamiento::listaAlojamientos(){
+            string line;
+            ifstream archivo("Archivos/alojamientos.txt");
+            if(!archivo.is_open()){
+                cerr<<"Error:No se abrio el archivo\n";
+            }
+            else{
+                cout<<"Archivo preparado para lectura\n";
+            }
+            while(getline(archivo,line)){
+                cout<<line<<endl;
+            }
+            archivo.close();
+
+
+        }
+
+
 
 
     //Metodos Clase Huesped
