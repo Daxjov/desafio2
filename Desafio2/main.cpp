@@ -1,170 +1,50 @@
+// ================= main.cpp =================
 #include "UdeaStay.h"
 
+int main() {
+    Login login;
+    string usuario, clave;
+    int tipo;
+    cout << login.getterWel();
+    cout << "Ingrese tipo de usuario (1-Huesped, 2-Anfitrion): ";
+    cin >> tipo;
+    cout << "Usuario: "; cin >> usuario;
+    cout << "Clave: "; cin >> clave;
 
-using namespace std;
+    if (tipo == 1 && login.verificate(usuario, clave, "Archivos/loginHuespedes.txt")) {
+        int opcion;
+        Huesped h;
+        do {
+            cout << "\nMENU HUESPED:\n1. Hacer reserva\n0. Salir\nOpcion: ";
+            cin >> opcion;
+            if (opcion == 1) h.hacerReserva();
+        } while (opcion != 0);
 
-int main()
-{
-    int con=0;
-    con++;
-    Login welcome;
-    con++;
-    cout<<welcome.getterWel();
-    cout<<"objeto Login welcome "<<sizeof(welcome)<<" Bytes"<<endl;
-    con++;
-    cout<<"interacciones welcome: "<<con++<<endl<<endl;
-    int opcion = 1;
-    con=0;
-    con++;
-    while(opcion!=0){
-    cout<<"1.Anfitrion"<<endl;
-        con++;
-    cout<<"2.Huesped"<<endl;
-        con++;
-    cout<<"0.Salir"<<endl;
-        con++;
-    cin>>opcion;
-        con++;
-    cout<<"Iteraciones Menu : "<<con<<endl;
-    switch (opcion) {
-    case 1:{
-        con=0;
-        string user;
-        con++;
-        string passwd;
-        con++;
-        cout<<"ingrese Usuario:"<<endl;
-        con++;
-        cin>>user;
-        cout<<endl;
-        con++;
-        cout<<"Ingrese Contraseña:"<<endl;
-        con++;
-        cin>>passwd;
-        con++;
-        cout<<endl;
-        con++;
-        Login acceso;
-        bool confirm=acceso.verificate(user,passwd,"Archivos/loginAnfitrion.txt");
-        cout<<"Objeto Login Acceso: "<<sizeof(acceso)<<" Bytes"<<endl<<endl;
-        if(confirm){
-            con++;
-            cout<<"Iteracciones login externas: "<<con++<<endl;
-            cout<<"Bienvenido Anfitrion\n";
-        }
-        else{
-       cout<<"Iteracciones login externas: "<<con++<<endl;
-            con++;
-        cout<<"Credenciales incorrectas"<<endl;
-        }
-
-        break;
-       }
-    case 2:{
-           con=0;
-        con++;
-        string user;
-           con++;
-        string passwd;
-           con++;
-           cout<<"ingrese Usuario:"<<endl;
-           con++;
-           cin>>user;
-           con++;
-           cout<<"Ingrese Contraseña:"<<endl;
-           con++;
-           cin>>passwd;
-           con++;
-           cout<<endl;
-           con++;
-           Login acceso;
-           con++;
-           bool confirm=acceso.verificate(user,passwd,"Archivos/loginHuesped.txt");
-
-           cout<<"Objeto Login acceso: "<<sizeof(acceso)<<" Bytes"<<endl;
-
-           cout<<"Iteraciones Login Huesped: "<<con++<<endl<<endl;
-
-           if(confirm){
-            int opcion1=1;
-            con=0;
-            con++;
-            while(opcion1!=0){
-                con++;
-            cout<<"Bienvenido Huesped\n\n";
-            con++;
-            cout<<"1.Reservar Alojamiento"<<endl;
-            con++;
-            cout<<"2.Anular Reservacion"<<endl;
-            con++;
-            cout<<"0.Salir"<<endl;
-            con++;
-            cin>>opcion1;
-            con++;
-            cout<<"Iteraciones Menu Huesped: "<<con++<<endl;
-            switch (opcion1) {
-                con=0;
-                con++;
-            case 1:{
-                con++;
-                string fechaR;
-                con++;
-                string municipio;
-                con++;
-                int noches;
-                con++;
-                cout<<"Formato Fecha Ej: lunes,3,agosto,2025"<<endl;
-                con++;
-                cout<<"Ingrese Fecha de reserva:\n";
-                con++;
-                cin>>fechaR;
-                con++;
-                cout<<"Ingrese Municipio:\n";
-                con++;
-                cin>>municipio;
-                con++;
-                cout<<"Ingrese cantidad de noches:\n";
-                con++;
-                cin>>noches;
-                con++;
-                Reserva reserva1;
-                reserva1.Reservas(fechaR,municipio,noches);
-                cout<<"Reserva"
-                reserva1.verReservas();
-                Alojamiento lista;
-                lista.listaAlojamientos();
-                int opc;
-                cout<<"Ingrese codigo de alojamiento\n";
-                cin>>opc;
-                switch (opc) {
-                case 1:
-                    cout<<"Alojamiento Reservado\n";
-
-                    break;
-                default:
-                    break;
-                }
-
-            break;
+    } else if (tipo == 2 && login.verificate(usuario, clave, "Archivos/loginAnfitrion.txt")) {
+        int opcion;
+        Anfitrion a;
+        do {
+            cout << "\nMENU ANFITRION:\n1. Cancelar reserva\n2. Consultar reservas activas\n3. Actualizar historico\n0. Salir\nOpcion: ";
+            cin >> opcion;
+            if (opcion == 1) {
+                string cod;
+                cout << "Codigo reserva a cancelar: ";
+                cin >> cod;
+                a.cancelarReserva(cod);
+            } else if (opcion == 2) {
+                string desde, hasta;
+                cout << "Fecha desde (dd/mm/yyyy): "; cin >> desde;
+                cout << "Fecha hasta (dd/mm/yyyy): "; cin >> hasta;
+                a.consultarReservasActivas(desde, hasta);
+            } else if (opcion == 3) {
+                string hoy;
+                cout << "Ingrese la fecha de hoy (dd/mm/yyyy): "; cin >> hoy;
+                actualizarHistorico(hoy);
             }
-            default:
-                break;
-            }
-               }
-           }
-        else{
-            cout<<"credenciales incorrectas\n\n";
-            con++;
-            cout<<"Iteraciones Login Huesped: "<<con++<<endl<<endl;
+        } while (opcion != 0);
 
-        }
-        break;
-
-    }
-    default:
-        break;
-    }
-
+    } else {
+        cout << "Credenciales incorrectas o tipo de usuario invalido.\n";
     }
     return 0;
 }
