@@ -21,6 +21,7 @@ public:
     Reserva() {}
     Reserva(string fEntrada, string muni, int noches, string codRes, string codAloja, string docH, string mPago, string fPago, double m, string n);
     void guardarReserva();
+
     string getCodigoReserva();
     string getCodigoAlojamiento();
     string getFechaEntrada();
@@ -62,6 +63,7 @@ class Huesped {
 public:
     Huesped() {}
     void hacerReserva();
+
 };
 
 class Login {

@@ -14,10 +14,15 @@ int main() {
     if (tipo == 1 && login.verificate(usuario, clave, "Archivos/loginHuespedes.txt")) {
         int opcion;
         Huesped h;
+        Alojamiento a;
         do {
-            cout << "\nMENU HUESPED:\n1. Hacer reserva\n0. Salir\nOpcion: ";
+            cout << "\nMENU HUESPED:\n1. Hacer reserva\n2.Alojamientos\n0. Salir\nOpcion: ";
             cin >> opcion;
             if (opcion == 1) h.hacerReserva();
+            else if(opcion==2){
+                cout<<"Nombre,Codigo,Anfitrion,Departamento,Municipio,Direccion,Precio,Amenidades"<<endl;
+                a.mostrarAlojamientos();
+                }
         } while (opcion != 0);
 
     } else if (tipo == 2 && login.verificate(usuario, clave, "Archivos/loginAnfitrion.txt")) {

@@ -80,7 +80,6 @@ void Huesped::hacerReserva() {
     cout << "Fecha entrada: "; cin >> fEntrada;
     cout << "Municipio: "; cin >> muni;
     cout << "Cantidad de noches: "; cin >> noches;
-    cout << "Codigo reserva: "; cin >> codRes;
     cout << "Codigo alojamiento: "; cin >> codAloja;
     cout << "Documento huesped: "; cin >> docH;
     cout << "Metodo pago: "; cin >> mPago;
